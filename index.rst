@@ -13,7 +13,7 @@ Contenuti:
 .. toctree::
 
   intro
-  arg_1
+  glossario
   arg_2
   arg_n
   
