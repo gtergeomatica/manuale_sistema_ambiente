@@ -20,7 +20,7 @@ import datetime
 
 # -- Project information -----------------------------------------------------
 
-project = u'Manuale - TITOLO' ######## DA MODIFICARE ########
+project = u'Manuale del sistema GIS/WebGIS per la raccolta dei rifiuti porta a prota - Sistema Ambiente Spa' ######## DA MODIFICARE ########
 now = datetime.datetime.now()
 copyright = u'{}, Gter srl'.format(now.year)
 author = u'Gter srl'
