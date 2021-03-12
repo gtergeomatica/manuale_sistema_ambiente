@@ -20,7 +20,7 @@ import datetime
 
 # -- Project information -----------------------------------------------------
 
-project = u'Manuale del sistema GIS/WebGIS per la raccolta dei rifiuti porta a prota - Sistema Ambiente Spa' ######## DA MODIFICARE ########
+project = u'Manuale del sistema GIS/WebGIS per la raccolta dei rifiuti porta a porta - Sistema Ambiente Spa' ######## DA MODIFICARE ########
 now = datetime.datetime.now()
 copyright = u'{}, Gter srl'.format(now.year)
 author = u'Gter srl'
@@ -167,7 +167,7 @@ html_show_copyright = True
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'manuale_titolo_no_spazi' ######## DA MODIFICARE########
+htmlhelp_basename = 'manuale_gis_webgis_sistema_ambiente' ######## DA MODIFICARE########
 
 
 from sphinx.builders.html import StandaloneHTMLBuilder
@@ -204,7 +204,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'manuale_titolo_no_spazi.tex', u'Manuale - TITOLO', ######## DA MODIFICARE########
+    (master_doc, 'manuale_gis_webgis_sistema_ambiente.tex', u'Manuale del sistema GIS/WebGIS per la raccolta dei rifiuti porta a porta - Sistema Ambiente Spa', ######## DA MODIFICARE########
      u'Gter srl', 'manual'),
 ]
 
@@ -214,7 +214,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'manuale_titolo_no_spazi', u'Manuale - TITOLO', ######## DA MODIFICARE########
+    (master_doc, 'manuale_gis_webgis_sistema_ambiente', u'Manuale del sistema GIS/WebGIS per la raccolta dei rifiuti porta a porta - Sistema Ambiente Spa', ######## DA MODIFICARE########
      [author], 1)
 ]
 
@@ -225,8 +225,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'manuale_titolo_no_spazi', u'Manuale - TITOLO', ######## DA MODIFICARE########
-     author, 'manuale_titolo_no_spazi', 'One line description of project.', ######## DA MODIFICARE########
+    (master_doc, 'manuale_gis_webgis_sistema_ambiente', u'Manuale del sistema GIS/WebGIS per la raccolta dei rifiuti porta a porta - Sistema Ambiente Spa', ######## DA MODIFICARE########
+     author, 'manuale_gis_webgis_sistema_ambiente', 'GIS/WebGIS per il monitoraggio della raccolta rifiuti porta a porta', ######## DA MODIFICARE########
      'Miscellaneous'),
 ]
 
