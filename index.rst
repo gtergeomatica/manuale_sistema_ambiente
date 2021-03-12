@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-IL TITOLO
+GIS/WebGIS per il monitoraggio del servizio di raccolta rifiuti porta a porta
 =====================================================================
 Contenuti:
 
