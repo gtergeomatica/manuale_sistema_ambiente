@@ -20,13 +20,14 @@ In fase di implementazione delle query che consente di agganciare le anagrafiche
 Le chiavi di aggancio impiegate sono Codice Via Comunale, Numero civico , Esponente.
 
 I possibili esiti di questa operazione sono stati suddivisi su più layer per una più agevole consultazione:
-#. Aggancio univoco:  relazione 1:1 tra l'indirizzo in anagrafica e indirizzario comunale
 
-#. Aggancio fallito: non è possibile trovare una corrispondenza 
+* aggancio univoco:  relazione 1:1 tra l'indirizzo in anagrafica e indirizzario comunale
 
-#. Aggancio fallito per via assente nell'indirizzario: non è possibile trovare una corrispondenza perchè nell'indirizzario non sono presenti indirizzi per quella specifica strada
+* aggancio fallito: non è possibile trovare una corrispondenza 
 
-#. Agganci multipli: relazione 1:n tra l'indirizzo presente in anagrafica e indirizzo presente tra i civici del comune dovuto alla presenza di duplicati nell'indirizzario comunale. In altri termini, a parità di codvia, numero civico, esponente sono presenti record con posizioni (geometrie) differenti. 
+* aggancio fallito per via assente nell'indirizzario: non è possibile trovare una corrispondenza e non è possibile trovare la via nell'indirizzario
+
+* agganci multipli: relazione 1:n tra l'indirizzo presente in anagrafica e indirizzo presente tra i civici del comune dovuto alla presenza di duplicati nell'indirizzario comunale. In altri termini, a parità di codvia, numero civico, esponente sono presenti record con posizioni (geometrie) differenti. 
 
 
 
@@ -39,14 +40,17 @@ Per correzioni degli indirizzi comunali è possibile lavorare on line o in ambie
 
 Il progetto QGS per la correzione degli indirizzi
 +++++++++++++++++++++++
+
+.. image:: img/progetto_correzioni.PNG
+
 Si descrivono di seguito i pricipali layer caricati nel progetto :
 
 * Civici del Comune (t_civici) : un circoletto piccolo blu per ogni civico presenti nell'indirizzario comunale (esclusi i civici del Centro Storico).
 * Aggancio univoco (v_aggancio_univoco) : un circoletto verde laddove l'aggancio anagrafica-civici ha esito positivo
 * Aggancio multiplo (v_agganci_multipli) : un circoletto arancione laddove l'aggancio anagrafica-civici produce più candidati 
 * Civici duplicati (v_civici_duplicati) : per evidenziare la casistica precedente anche in assenza di anagrafiche da agganciare
-* (v_civici_non trovati) : tabella alfanumerica con indicazione del numero di contratto 
-* (v_codvia_assente) : tabella alfanumerica con indicazione del numero di contratto 
+* Aggancio fallito(v_civici_non trovati) : tabella alfanumerica con indicazione del numero di contratto 
+* Aggancio per via assente nell'indirizzario (v_codvia_assente) : tabella alfanumerica con indicazione del numero di contratto 
 Gli altri layer (stradario, limiti amministrativi,  frazioni, ) servono, al bisogno, ad inqauadrare il contesto territoriale.
 
 Gli unici layer editabili sono Civici del Comune (t_civici) e la tabella alfanumerica dello Stradario (stradario_comunale).
@@ -58,20 +62,26 @@ La maschera di editing dell'indirizzario richiede di compilare i seguenti campi:
 * Lettera : l'espondente, non obbligatorio
 Il campo flag_modificato serve ad individuare le correzioni effettuate alla banca dati comunale, è un booleano e non è editabile perchè popolato automaticamente in caso di inserimento di un nuovo record o di modifica di un record esistente.
 
-La modifica dello stradario comunale è da utilizzare solo nel caso in cui, a causa di mancato aggiornamento della fonte dati, fosse necessario inseire nuove strade o modificare la donominazione di strade esistenti.
+La modifica dello stradario comunale è da utilizzare solo nel caso in cui, a causa di mancato aggiornamento della fonte dati, fosse necessario inserire nuove strade o modificare la donominazione di strade esistenti.
 
 Le correzioni
 +++++++++++++++++++++++
 
 Di seguito, nel dettaglio, le operazioni da eseguire caso per caso.
 
-1.Indirizzi non agganciati
+
+1. Aggancio fallito
 +++++++++++++++++++++++
+Probllematica 1: Non è possibile trovare una corrispondenza tra indirizzo presente in anagrafica e indirizzario comunale.
+
+Per consultare la tabella contenente le anagrafiche che ricadono in questa casistica accedere alla tabella Aggancio Fallito  pannello 'Dati' 
 
 
-2.Indirizzi non agganciati per via assente nell'indirizzario
+
+2. Aggancio fallito per via assente nell'indirizzario
 +++++++++++++++++++++++
 Questo rappresenta un caso particolare rispetto al precedente. L'aggancio 
+
 
 3.Agganci multipli
 +++++++++++++++++++++++
